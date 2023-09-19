@@ -1,0 +1,15 @@
+#include <Adafruit_Fingerprint.h>
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(2, 3);
+
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+
+void setup()
+{
+Serial.begin(9600);
+while (!Serial); // For Yun/Leo/Micro/Zero/...
+delay(100);
+Serial.println("fingertest");
+pinMode(12, OUTPUT);
+pinMode(11, OUTPUT);
